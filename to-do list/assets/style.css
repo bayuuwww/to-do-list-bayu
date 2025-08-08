@@ -1,0 +1,455 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+/* Container */
+body > * {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Typography */
+h2, h3, h4 {
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h3 {
+    
+    font-size: 1.8em;
+    margin-top: 30px;
+}
+
+h4 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: #333;
+    text-shadow: none;
+}
+
+/* Form Styles */
+form {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #667eea;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+    font-family: inherit;
+}
+
+/* Button Styles */
+button[type="submit"],
+.btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button[type="submit"]:hover,
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    background: linear-gradient(135deg, #5a6fd8 0%, #6b4190 100%);
+}
+
+/* Links */
+a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    margin: 5px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Special button styles */
+a[href*="add.php"] {
+    background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%);
+    color: white;
+    font-size: 18px;
+    padding: 15px 25px;
+    margin: 20px 0;
+    border: none;
+}
+
+a[href*="logout.php"] {
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+    color: white;
+    float: right;
+    margin-top: -50px;
+}
+
+/* Task List Styles */
+.task-list {
+    margin-top: 30px;
+}
+
+.task-box {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    margin: 20px 0;
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 8px solid;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.task-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Priority Colors */
+.priority-1 {
+    border-left-color: #e74c3c; /* Merah */
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(255, 255, 255, 0.95) 20%);
+}
+
+.priority-2 {
+    border-left-color: #f39c12; /* Oranye */
+    background: linear-gradient(135deg, rgba(243, 156, 18, 0.1) 0%, rgba(255, 255, 255, 0.95) 20%);
+}
+
+.priority-3 {
+    border-left-color: #f1c40f; /* Kuning */
+    background: linear-gradient(135deg, rgba(241, 196, 15, 0.1) 0%, rgba(255, 255, 255, 0.95) 20%);
+}
+
+.priority-4 {
+    border-left-color: #27ae60; /* Hijau */
+    background: linear-gradient(135deg, rgba(39, 174, 96, 0.1) 0%, rgba(255, 255, 255, 0.95) 20%);
+}
+
+.task-box p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.task-box strong {
+    color: #555;
+}
+
+/* Status Styles */
+.done {
+    color: #27ae60;
+    font-weight: bold;
+    font-size: 18px;
+    background: rgba(39, 174, 96, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 4px solid #27ae60;
+}
+
+.expired {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 18px;
+    background: rgba(231, 76, 60, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 4px solid #e74c3c;
+}
+
+/* Task Actions */
+.task-box a {
+    background: rgba(102, 126, 234, 0.8);
+    color: white;
+    margin: 5px 5px 5px 0;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 20px;
+}
+
+.task-box a[href*="done.php"] {
+    background: rgba(39, 174, 96, 0.8);
+}
+
+.task-box a[href*="edit.php"] {
+    background: rgba(243, 156, 18, 0.8);
+}
+
+.task-box a[href*="delete.php"] {
+    background: rgba(231, 76, 60, 0.8);
+}
+
+/* Filter Form */
+form[method="get"] {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+     max-width: fit-content;
+}
+
+form[method="get"] label {
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+}
+
+form[method="get"] select {
+    width: auto;
+    min-width: 150px;
+    margin: 0;
+}
+
+form[method="get"] input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+/* Error Messages */
+p[style*="color:red"] {
+    background: rgba(231, 76, 60, 0.1);
+    color: #e74c3c !important;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #e74c3c;
+    margin: 15px 0;
+    font-weight: 600;
+}
+
+/* Login/Register specific */
+body:has(form[action=""]) form,
+form:has(input[name="username"]) {
+    max-width: 400px;
+    margin: 50px auto;
+}
+
+/* Navigation Links */
+p:has(a[href*="register.php"]),
+p:has(a[href*="login.php"]) {
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+    font-size: 16px;
+}
+
+p:has(a[href*="register.php"]) a,
+p:has(a[href*="login.php"]) a {
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    text-decoration: underline;
+    padding: 5px 10px;
+    margin: 0 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    h2 {
+        font-size: 2em;
+    }
+    
+    form {
+        padding: 20px;
+        margin: 10px 0;
+    }
+    
+    .task-box {
+        padding: 15px;
+        margin: 15px 0;
+    }
+    
+    form[method="get"] {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    form[method="get"] select {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    a[href*="logout.php"] {
+        float: none;
+        margin: 10px 0;
+        display: block;
+        text-align: center;
+    }
+    
+    .task-box a {
+        display: inline-block;
+        margin: 3px;
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.8em;
+    }
+    
+    form {
+        padding: 15px;
+    }
+    
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    textarea,
+    select {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    button[type="submit"] {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    .task-box {
+        padding: 12px;
+    }
+    
+    .task-box h4 {
+        font-size: 1.2em;
+    }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.task-box,
+form {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .task-box {
+        border: 1px solid #ccc;
+        background: white;
+        break-inside: avoid;
+    }
+    
+    a[href*="logout.php"],
+    a[href*="add.php"],
+    .task-box a {
+        display: none;
+    }
+}
+.tdl2{
+    text-align: center;
+}
+.tdl89{
+    text-align: center;
+}
+
+.add77{
+    text-align: center;
+}
